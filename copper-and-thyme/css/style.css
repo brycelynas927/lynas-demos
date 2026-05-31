@@ -1,0 +1,1219 @@
+/* ============================================================
+   COPPER & THYME — style.css
+   Design: Style 5 (Light / Editorial Minimal)
+   Colors: Cream + Forest Green + Terracotta
+   Fonts: Libre Baskerville (headings) + DM Sans (body)
+   Owner Profile: Woman, 30s, Old South — refined, warm, breathing room
+   ============================================================ */
+
+/* ============================================================
+   CSS VARIABLES
+   ============================================================ */
+:root {
+  /* Colors */
+  --cream:          #faf6f0;
+  --warm-white:     #fff9f4;
+  --forest:         #1d3a2a;
+  --forest-mid:     #2e5940;
+  --forest-light:   #4a7a5a;
+  --terracotta:     #b56a3a;
+  --terracotta-lt:  #d4956a;
+  --stone:          #8a7a6a;
+  --stone-light:    #bfb3a8;
+  --border:         #e8ddd4;
+  --text-dark:      #1a1208;
+  --text-mid:       #5a4a3a;
+  --text-light:     #8a7a6a;
+
+  /* Fonts */
+  --font-heading:   'Libre Baskerville', Georgia, serif;
+  --font-body:      'DM Sans', system-ui, sans-serif;
+
+  /* Spacing */
+  --section-pad:    5.5rem;
+  --container-max:  1180px;
+  --radius:         3px;
+  --radius-lg:      6px;
+
+  /* Shadows — very soft for a light site */
+  --shadow-sm:      0 1px 6px rgba(26,18,8,0.06);
+  --shadow-md:      0 4px 20px rgba(26,18,8,0.09);
+  --shadow-lg:      0 8px 40px rgba(26,18,8,0.12);
+}
+
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--cream);
+  color: var(--text-dark);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; text-decoration: none; }
+ul, ol { list-style: none; }
+address { font-style: normal; }
+
+/* ============================================================
+   TYPOGRAPHY
+   ============================================================ */
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--text-dark);
+}
+
+h1 { font-size: clamp(2.8rem, 6vw, 5rem); letter-spacing: -0.02em; }
+h2 { font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -0.01em; }
+h3 { font-size: clamp(1.2rem, 2.5vw, 1.5rem); }
+
+h1 em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--terracotta);
+}
+
+p {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--text-mid);
+}
+
+/* ============================================================
+   LAYOUT HELPERS
+   ============================================================ */
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section-label {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  margin-bottom: 0.75rem;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.section-header h2 { margin-bottom: 0.75rem; }
+.section-header p { max-width: 540px; margin: 0 auto; }
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.btn-primary {
+  display: inline-block;
+  background-color: var(--forest);
+  color: var(--cream);
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.9rem 2.4rem;
+  border-radius: var(--radius);
+  border: 2px solid var(--forest);
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
+}
+
+.btn-primary:hover, .btn-primary:focus {
+  background-color: var(--forest-mid);
+  border-color: var(--forest-mid);
+  transform: translateY(-1px);
+  outline: 2px solid var(--forest-mid);
+  outline-offset: 3px;
+}
+
+.btn-ghost {
+  display: inline-block;
+  background-color: transparent;
+  color: var(--forest);
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.9rem 2.4rem;
+  border-radius: var(--radius);
+  border: 2px solid var(--forest);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-ghost:hover, .btn-ghost:focus {
+  background-color: var(--forest);
+  color: var(--cream);
+  outline: 2px solid var(--forest);
+  outline-offset: 3px;
+}
+
+.btn-outline {
+  display: inline-block;
+  background-color: transparent;
+  color: var(--cream);
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.9rem 2.4rem;
+  border-radius: var(--radius);
+  border: 2px solid rgba(250,246,240,0.5);
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-outline:hover, .btn-outline:focus {
+  border-color: var(--cream);
+  background-color: rgba(250,246,240,0.1);
+  outline: 2px solid var(--cream);
+  outline-offset: 3px;
+}
+
+.btn-full { display: block; width: 100%; text-align: center; cursor: pointer; }
+
+/* ============================================================
+   TOPBAR
+   ============================================================ */
+.topbar {
+  background-color: var(--forest);
+  color: rgba(250,246,240,0.75);
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  padding: 0.55rem 0;
+}
+
+.topbar-inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}
+
+.topbar a {
+  color: var(--cream);
+  transition: opacity 0.15s;
+}
+
+.topbar a:hover { opacity: 0.75; }
+
+.topbar-reserve {
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--terracotta-lt) !important;
+}
+
+.topbar-divider { color: rgba(250,246,240,0.25); }
+
+/* ============================================================
+   NAV
+   ============================================================ */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--cream);
+  border-bottom: 1px solid var(--border);
+  padding: 1rem 0;
+  transition: box-shadow 0.25s ease;
+}
+
+.nav.scrolled {
+  box-shadow: var(--shadow-md);
+}
+
+.nav-inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.nav-logo {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.logo-name {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--forest);
+}
+
+.logo-sub {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--stone);
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.nav-menu a {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: var(--text-mid);
+  transition: color 0.15s;
+}
+
+.nav-menu a:hover, .nav-menu a:focus {
+  color: var(--forest);
+  outline: none;
+}
+
+.nav-cta {
+  background-color: var(--forest) !important;
+  color: var(--cream) !important;
+  font-weight: 600 !important;
+  padding: 0.5rem 1.4rem;
+  border-radius: var(--radius);
+  letter-spacing: 0.08em !important;
+  font-size: 0.82rem !important;
+  text-transform: uppercase;
+  transition: background-color 0.2s ease !important;
+}
+
+.nav-cta:hover, .nav-cta:focus {
+  background-color: var(--forest-mid) !important;
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.3rem;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background-color: var(--forest);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.nav-toggle.is-open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.nav-toggle.is-open span:nth-child(2) { opacity: 0; }
+.nav-toggle.is-open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+/* ============================================================
+   HERO — Style 5: Light Editorial
+   Left: cream bg + large serif headline
+   Right: portrait dining room photo
+   ============================================================ */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 85vh;
+  align-items: center;
+  gap: 0;
+  padding: 5rem 0;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.hero-text {
+  padding-right: 4rem;
+}
+
+.hero-eyebrow {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--stone);
+  margin-bottom: 1.2rem;
+}
+
+.hero h1 {
+  margin-bottom: 1.5rem;
+  color: var(--text-dark);
+}
+
+.hero-desc {
+  font-size: 1.05rem;
+  color: var(--text-mid);
+  line-height: 1.8;
+  margin-bottom: 2.2rem;
+  max-width: 440px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Right: portrait photo with slight decoration */
+.hero-image-wrap {
+  position: relative;
+}
+
+.hero-photo {
+  width: 100%;
+  aspect-ratio: 3/4;
+  background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=85');
+  background-size: cover;
+  background-position: center;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.hero-tag {
+  position: absolute;
+  bottom: -1.5rem;
+  left: -1.5rem;
+  background-color: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.8rem 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.tag-line {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--forest);
+}
+
+.tag-dot {
+  color: var(--stone-light);
+  font-size: 0.5rem;
+}
+
+/* ============================================================
+   PHOTO BAND — full-width cinematic dining room
+   ============================================================ */
+.photo-band {
+  width: 100%;
+  height: 420px;
+  background-image: url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1920&q=85');
+  background-size: cover;
+  background-position: center 55%;
+  background-attachment: fixed;
+  margin-top: 4rem;
+}
+
+/* ============================================================
+   ACCENT STRIP — hours bar
+   ============================================================ */
+.accent-strip {
+  background-color: var(--terracotta);
+  padding: 1rem 0;
+}
+
+.strip-inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.strip-item {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--warm-white);
+}
+
+.strip-dot { color: rgba(255,249,244,0.4); font-size: 0.5rem; }
+
+/* ============================================================
+   MENU HIGHLIGHTS
+   ============================================================ */
+.menu {
+  padding: var(--section-pad) 0;
+  background-color: var(--warm-white);
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+
+.menu-category {
+  border-top: 2px solid var(--forest);
+  padding-top: 1.5rem;
+}
+
+.category-name {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--forest);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.dish-list { display: flex; flex-direction: column; gap: 1.5rem; }
+
+.dish {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.dish:last-child { border-bottom: none; padding-bottom: 0; }
+
+.dish-info { flex: 1; }
+
+.dish-name {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 0.97rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 0.3rem;
+}
+
+.dish-desc {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--text-light);
+  line-height: 1.55;
+}
+
+.dish-price {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--terracotta);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.dish-tag {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--forest);
+  background-color: rgba(29,58,42,0.08);
+  padding: 0.1rem 0.35rem;
+  border-radius: 2px;
+  vertical-align: middle;
+  margin-left: 0.3rem;
+}
+
+.menu-note {
+  text-align: center;
+  font-size: 0.82rem;
+  color: var(--stone);
+  margin-top: 3rem;
+  font-style: italic;
+}
+
+/* ============================================================
+   ABOUT — photo left, text right
+   ============================================================ */
+.about {
+  padding: var(--section-pad) 0;
+  background-color: var(--cream);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 6rem;
+  align-items: start;
+}
+
+.about-image-col { position: relative; }
+
+.about-photo {
+  width: 100%;
+  aspect-ratio: 4/5;
+  background-image: url('https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=700&q=85');
+  background-size: cover;
+  background-position: center top;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.about-caption {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.about-caption strong {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  color: var(--forest);
+}
+
+.about-caption span {
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--stone);
+}
+
+.about-text h2 { margin-bottom: 1.5rem; }
+.about-text p { margin-bottom: 1.1rem; }
+
+.values {
+  margin-top: 2.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.values li {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.value-icon { font-size: 1.25rem; flex-shrink: 0; margin-top: 0.1rem; }
+
+.values strong {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--forest);
+  margin-bottom: 0.15rem;
+}
+
+.values span { font-size: 0.88rem; color: var(--text-light); }
+
+/* ============================================================
+   STATS BAR
+   ============================================================ */
+.stats-bar {
+  background-color: var(--forest);
+  padding: 3.5rem 0;
+}
+
+.stats-inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  text-align: center;
+}
+
+.stat-num {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  color: var(--terracotta-lt);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(250,246,240,0.5);
+}
+
+/* ============================================================
+   TESTIMONIALS
+   ============================================================ */
+.testimonials {
+  padding: var(--section-pad) 0;
+  background-color: var(--warm-white);
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.review-card {
+  background-color: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 2.2rem;
+  position: relative;
+}
+
+.review-card::before {
+  content: '\201C';
+  font-family: var(--font-heading);
+  font-size: 4rem;
+  color: var(--terracotta);
+  opacity: 0.15;
+  position: absolute;
+  top: 1rem;
+  left: 1.5rem;
+  line-height: 1;
+}
+
+.stars {
+  color: var(--terracotta);
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  margin-bottom: 1rem;
+}
+
+.review-card p {
+  font-size: 0.97rem;
+  font-style: italic;
+  color: var(--text-mid);
+  line-height: 1.7;
+  margin-bottom: 1.4rem;
+}
+
+.review-card footer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.reviewer {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--forest);
+}
+
+.reviewer-loc {
+  font-size: 0.78rem;
+  color: var(--stone);
+  letter-spacing: 0.04em;
+}
+
+/* ============================================================
+   RESERVATIONS
+   ============================================================ */
+.reservations {
+  padding: var(--section-pad) 0;
+  background-color: var(--cream);
+}
+
+.reserve-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 6rem;
+  align-items: start;
+}
+
+.reserve-text h2 { margin-bottom: 1rem; }
+.reserve-text > p { margin-bottom: 1rem; }
+.reserve-text > p a { color: var(--terracotta); font-weight: 600; }
+.reserve-text > p a:hover { text-decoration: underline; }
+
+.hours-block, .location-block {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.hours-block h3, .location-block h3 {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--stone);
+  margin-bottom: 0.75rem;
+}
+
+.hours-table { width: 100%; border-collapse: collapse; }
+
+.hours-table td {
+  padding: 0.4rem 0;
+  font-size: 0.9rem;
+  color: var(--text-mid);
+  border-bottom: 1px solid var(--border);
+}
+
+.hours-table td:last-child {
+  text-align: right;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.closed-row td { color: var(--stone-light) !important; font-style: italic; }
+
+.location-block address {
+  font-size: 0.95rem;
+  color: var(--text-mid);
+  line-height: 1.7;
+  margin-bottom: 0.5rem;
+}
+
+.parking-note { font-size: 0.8rem; color: var(--stone); font-style: italic; }
+
+/* Reservation form */
+.reserve-form-wrap {
+  background-color: var(--warm-white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+}
+
+.reserve-form { display: flex; flex-direction: column; gap: 1.2rem; }
+
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+
+.form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+
+.form-group label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--stone);
+}
+
+.form-group label span { color: var(--terracotta); }
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  background-color: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text-dark);
+  padding: 0.7rem 0.9rem;
+  transition: border-color 0.2s ease;
+  resize: vertical;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder { color: var(--stone-light); }
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--forest);
+}
+
+.form-group input.error,
+.form-group select.error { border-color: #c0392b; }
+
+.field-error { font-size: 0.75rem; color: #c0392b; min-height: 1rem; }
+
+.form-note {
+  font-size: 0.78rem;
+  color: var(--stone);
+  text-align: center;
+  font-style: italic;
+}
+
+/* ============================================================
+   PRIVATE DINING
+   ============================================================ */
+.private-dining {
+  padding: var(--section-pad) 0;
+  background-color: var(--forest);
+}
+
+.private-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.private-photo {
+  width: 100%;
+  aspect-ratio: 4/3;
+  background-image: url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=900&q=85');
+  background-size: cover;
+  background-position: center;
+  border-radius: var(--radius-lg);
+  opacity: 0.85;
+}
+
+.private-text .section-label { color: var(--terracotta-lt); }
+
+.private-text h2 {
+  color: var(--cream);
+  margin-bottom: 1.25rem;
+}
+
+.private-text p {
+  color: rgba(250,246,240,0.75);
+  margin-bottom: 1rem;
+}
+
+.private-text .btn-outline { margin-top: 0.5rem; }
+
+/* ============================================================
+   GALLERY — masonry-style photo grid
+   ============================================================ */
+.gallery {
+  background-color: var(--cream);
+  padding: var(--section-pad) 0 0;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 260px 260px;
+  gap: 6px;
+}
+
+.gallery-photo {
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  transition: transform 0.4s ease;
+}
+
+.gallery-photo:hover { transform: scale(1.02); }
+
+.gallery-photo--tall {
+  grid-row: span 2;
+}
+
+.gallery-photo--wide {
+  grid-column: span 2;
+}
+
+.gallery-cta {
+  text-align: center;
+  padding: 2.5rem 0;
+}
+
+/* ============================================================
+   OPEN / CLOSED STATUS INDICATOR
+   ============================================================ */
+.open-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 600;
+}
+
+.open-status::before {
+  content: '';
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: currentColor;
+  flex-shrink: 0;
+}
+
+.open-status.is-open {
+  color: #6fcf97;
+}
+
+.open-status.is-closed {
+  color: rgba(250,246,240,0.45);
+}
+
+/* ============================================================
+   FLOATING RESERVE CTA
+   ============================================================ */
+.float-cta {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 200;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+.float-cta.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+  aria-hidden: false;
+}
+
+.float-cta-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--forest);
+  color: var(--cream);
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  padding: 0.85rem 1.6rem;
+  border-radius: 100px;
+  box-shadow: 0 4px 24px rgba(29,58,42,0.35);
+  transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+  white-space: nowrap;
+}
+
+.float-cta-btn:hover,
+.float-cta-btn:focus {
+  background-color: var(--forest-mid);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(29,58,42,0.45);
+  outline: 2px solid var(--forest-mid);
+  outline-offset: 3px;
+}
+
+.float-cta-icon { font-size: 1rem; }
+
+/* ============================================================
+   SCROLL REVEAL ANIMATIONS
+   Elements start hidden, .is-visible triggers the transition
+   ============================================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger children inside a reveal parent */
+.reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.reveal-stagger.is-visible > *:nth-child(1) { opacity: 1; transform: translateY(0); transition-delay: 0s; }
+.reveal-stagger.is-visible > *:nth-child(2) { opacity: 1; transform: translateY(0); transition-delay: 0.1s; }
+.reveal-stagger.is-visible > *:nth-child(3) { opacity: 1; transform: translateY(0); transition-delay: 0.2s; }
+.reveal-stagger.is-visible > *:nth-child(4) { opacity: 1; transform: translateY(0); transition-delay: 0.3s; }
+.reveal-stagger.is-visible > *:nth-child(5) { opacity: 1; transform: translateY(0); transition-delay: 0.4s; }
+.reveal-stagger.is-visible > *:nth-child(6) { opacity: 1; transform: translateY(0); transition-delay: 0.5s; }
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .reveal-stagger > * {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .float-cta { transition: none; }
+  .gallery-photo { transition: none; }
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer {
+  background-color: var(--text-dark);
+  padding: 3rem 0 2rem;
+}
+
+.footer-inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 2rem 4rem;
+  align-items: start;
+}
+
+.footer-brand { display: flex; flex-direction: column; gap: 0.35rem; }
+
+.footer-name {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  color: var(--cream);
+}
+
+.footer-loc { font-size: 0.8rem; color: var(--stone); letter-spacing: 0.06em; }
+
+.footer-phone {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--terracotta-lt);
+  margin-top: 0.25rem;
+}
+
+.footer-nav { display: flex; flex-direction: column; gap: 0.6rem; }
+
+.footer-nav a {
+  font-size: 0.85rem;
+  color: var(--stone);
+  transition: color 0.15s;
+  letter-spacing: 0.04em;
+}
+
+.footer-nav a:hover { color: var(--cream); }
+
+.footer-social { display: flex; flex-direction: column; gap: 0.6rem; }
+
+.footer-social .social-link {
+  font-size: 0.85rem;
+  color: var(--stone);
+  transition: color 0.15s;
+}
+
+.footer-social .social-link:hover { color: var(--terracotta-lt); }
+
+.footer-copy {
+  grid-column: 1 / -1;
+  font-size: 0.75rem;
+  color: var(--stone);
+  border-top: 1px solid rgba(138,122,106,0.2);
+  padding-top: 1.5rem;
+  text-align: center;
+}
+
+/* ============================================================
+   MOBILE — 900px and below
+   ============================================================ */
+@media (max-width: 900px) {
+
+  :root { --section-pad: 4rem; }
+
+  /* Nav */
+  .nav-toggle { display: flex; }
+
+  .nav-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--cream);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    flex-direction: column;
+    gap: 0;
+    padding: 0.5rem 0;
+    display: none;
+    box-shadow: var(--shadow-md);
+  }
+
+  .nav-menu.is-open { display: flex; }
+
+  .nav-menu a {
+    padding: 0.9rem 2rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-menu a:last-child { border-bottom: none; }
+  .nav-cta { margin: 0.5rem 2rem !important; }
+
+  /* Hero */
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding: 3rem 1.5rem 2rem;
+    gap: 3rem;
+  }
+
+  .hero-text { padding-right: 0; }
+  .hero-tag { position: static; margin-top: 1rem; }
+
+  /* Photo band */
+  .photo-band { height: 260px; background-attachment: scroll; }
+
+  /* Menu */
+  .menu-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+
+  /* About */
+  .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+
+  /* Stats */
+  .stats-inner { grid-template-columns: repeat(2, 1fr); }
+
+  /* Reviews */
+  .reviews-grid { grid-template-columns: 1fr; }
+
+  /* Reservations */
+  .reserve-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .form-row { grid-template-columns: 1fr; }
+
+  /* Private dining */
+  .private-grid { grid-template-columns: 1fr; gap: 3rem; }
+
+  /* Footer */
+  .footer-inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .footer-nav, .footer-social {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-inner { grid-template-columns: repeat(2, 1fr); }
+  .topbar-inner { gap: 0.5rem; font-size: 0.72rem; }
+  .strip-inner { gap: 0.5rem; text-align: center; }
+  .strip-dot { display: none; }
+}

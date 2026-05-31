@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The Wortley Table — Wortley Village's neighbourhood gastropub in London, Ontario. Craft cocktails, seasonal mains, weekend brunch. Fully licensed patio.">
+  <title>The Wortley Table — Gastropub in Wortley Village, London ON</title>
+
+  <!-- Google Fonts — load before stylesheet -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- ── DEMO BANNER ── -->
+  <div id="demo-banner" style="position:fixed;top:0;left:0;right:0;z-index:99999;background:#111111;color:#888;text-align:center;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:11px;letter-spacing:0.05em;padding:6px 16px;box-sizing:border-box;border-bottom:1px solid #2a2a2a;">
+    Sample mockup by <strong style="color:#ddd;">Lynas Digital</strong> &mdash; not a real business &nbsp;&middot;&nbsp; <a href="mailto:brudbryc387@gmail.com" style="color:#bbb;text-decoration:none;">Contact Bryce</a>
+  </div>
+
+
+  <!-- ===================== NAV ===================== -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#" class="nav__logo">The Wortley Table</a>
+
+      <button class="nav__hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false">
+        <span class="nav__bar"></span>
+        <span class="nav__bar"></span>
+        <span class="nav__bar"></span>
+      </button>
+
+      <ul class="nav__links" id="navLinks">
+        <li><a href="#menu" class="nav__link">Menu</a></li>
+        <li><a href="#about" class="nav__link">About</a></li>
+        <li><a href="#reserve" class="nav__link nav__link--reserve">Reserve</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ===================== HERO — Split-Screen ===================== -->
+    <section class="hero">
+      <div class="hero__left">
+        <p class="hero__label">Wortley Village &bull; London, ON</p>
+        <h1 class="hero__headline">The Neighbourhood Has a Table</h1>
+        <p class="hero__sub">The Wortley Table is Wortley Village's gastropub — a fully licensed, kitchen-serious spot in London, ON where you stay longer than you planned. Patio open May through September.</p>
+        <a href="#reserve" class="btn btn--primary">Reserve Your Table</a>
+      </div>
+      <div class="hero__right" role="img" aria-label="Elegant dining room interior at The Wortley Table"></div>
+    </section>
+
+    <!-- ===================== MENU ===================== -->
+    <section class="menu" id="menu">
+      <div class="container">
+        <h2 class="section-heading section-heading--center">What We're Serving</h2>
+        <p class="section-sub section-sub--center">Plates that rotate with the season. Always sourced close to home.</p>
+
+        <div class="menu__grid">
+
+          <article class="menu-card fade-in">
+            <p class="menu-card__category">Starters &amp; Shareables</p>
+            <h3 class="menu-card__name">Hand-Selected Charcuterie &amp; Shareables</h3>
+            <p class="menu-card__desc">Hand-selected charcuterie, roasted bone marrow with grilled sourdough, and crispy calamari with house-made aioli — built for splitting, not rushing.</p>
+            <p class="menu-card__price">$14–$19</p>
+          </article>
+
+          <article class="menu-card fade-in">
+            <p class="menu-card__category">Mains</p>
+            <h3 class="menu-card__name">Seasonal Kitchen Mains</h3>
+            <p class="menu-card__desc">Pan-seared Ontario trout, slow-braised short rib, and a mushroom risotto that regulars order on repeat — plates that rotate with the season and never phone it in.</p>
+            <p class="menu-card__price">$26–$38</p>
+          </article>
+
+          <article class="menu-card fade-in">
+            <p class="menu-card__category">Burgers &amp; Sandwiches</p>
+            <h3 class="menu-card__name">House Smash Burgers &amp; Sandwiches</h3>
+            <p class="menu-card__desc">Hand-pressed smash burgers on house brioche and stacked sandwiches loaded with local produce — the kind of lunch you think about on the drive back.</p>
+            <p class="menu-card__price">$18–$24</p>
+          </article>
+
+          <article class="menu-card fade-in">
+            <p class="menu-card__category">Weekend Brunch</p>
+            <h3 class="menu-card__name">Saturday &amp; Sunday Brunch</h3>
+            <p class="menu-card__desc">Saturdays and Sundays from 10am to 2pm: thick-cut French toast, eggs benny with hollandaise made from scratch, and a smoked brisket hash worth the wait.</p>
+            <p class="menu-card__price">$16–$22</p>
+          </article>
+
+          <article class="menu-card fade-in">
+            <p class="menu-card__category">Craft Cocktails &amp; Local Beer</p>
+            <h3 class="menu-card__name">Cocktails &amp; Ontario Craft Taps</h3>
+            <p class="menu-card__desc">A rotating cocktail list built by people who actually drink cocktails, plus eight taps pouring Southwest Ontario craft breweries including Anderson Craft and Forked River.</p>
+            <p class="menu-card__price">Cocktails $13–$16 &nbsp;/&nbsp; Pints $7–$9</p>
+          </article>
+
+          <article class="menu-card fade-in">
+            <p class="menu-card__category">Desserts</p>
+            <h3 class="menu-card__name">House Desserts &amp; Ice Cream Flights</h3>
+            <p class="menu-card__desc">Sticky toffee pudding, crème brûlée, and local ice cream flights that change with what Ontario farms are producing — small finishes that don't feel like an afterthought.</p>
+            <p class="menu-card__price">$9–$13</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== ABOUT ===================== -->
+    <section class="about" id="about">
+      <div class="container">
+        <div class="about__inner">
+
+          <div class="about__photo-wrap">
+            <img
+              src="https://images.unsplash.com/photo-7MAjXGUmaPw?auto=format&fit=crop&w=800&q=80"
+              alt="Claire Moran, owner of The Wortley Table, preparing food in the kitchen"
+              class="about__photo"
+            >
+          </div>
+
+          <div class="about__text">
+            <p class="hero__label">Our Story</p>
+            <h2 class="about__name">Claire Moran</h2>
+            <p class="about__title">Owner &amp; Founder</p>
+
+            <p class="about__para">I grew up in Old South, about ten minutes from where this pub now stands. Moved to Toronto for a while — worked in restaurant kitchens there for most of my twenties, learned what good food service actually looks like — and came back to London because this city kept pulling at me. I opened The Wortley Table in 2021 because I wanted a place in this neighbourhood that felt like it belonged here. Not a chain. Not a concept. Just a room with good food and enough space at the bar to talk to someone you just met.</p>
+
+            <p class="about__para">What we do differently is quieter than it sounds: we source from Ontario farms when the season allows it, we write a new menu section every few weeks, and we don't rush tables. The kitchen takes the food seriously. The front of house takes the guests seriously. That combination is rarer than it should be, and it's the only thing I ever wanted to get right.</p>
+
+            <p class="about__para">If you're from Wortley Village or Old South, there's a decent chance I've already seen you in here. If you're coming from Byron or downtown for the first time, welcome — the patio fills up fast on Friday nights, so call ahead if you can. Either way, there's a table for you.</p>
+
+            <p class="about__sig">— Claire Moran, Owner</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== TESTIMONIALS ===================== -->
+    <section class="testimonials">
+      <div class="container">
+        <h2 class="section-heading section-heading--center section-heading--light">What Regulars Say</h2>
+
+        <div class="testimonials__grid">
+
+          <article class="testimonial-card fade-in">
+            <span class="testimonial-card__quote-mark">&ldquo;</span>
+            <p class="testimonial-card__text">I've done Saturday brunch here three times this spring and I'm already planning a fourth. The brisket hash is genuinely one of the best things I've eaten in London — and I've lived here my whole life. Service is the kind where they remember you but don't make it weird.</p>
+            <p class="testimonial-card__attr">— Andrea K., Old South</p>
+          </article>
+
+          <article class="testimonial-card fade-in">
+            <span class="testimonial-card__quote-mark">&ldquo;</span>
+            <p class="testimonial-card__text">We had a big group on the patio in July and it was exactly what a London summer night should feel like. Cold beer, great food, no one rushing us out. They had a tap from Forked River I'd never tried before. The whole evening cost less than I expected for what it was.</p>
+            <p class="testimonial-card__attr">— Marcus T., Byron</p>
+          </article>
+
+          <article class="testimonial-card fade-in">
+            <span class="testimonial-card__quote-mark">&ldquo;</span>
+            <p class="testimonial-card__text">Took my mom here for her birthday — she's not easy to impress, especially at restaurants. She had the short rib and ordered a second glass of wine before the entree was finished. She's already asked when we're going back. That's the whole review, really.</p>
+            <p class="testimonial-card__attr">— Jess P., Wortley Village</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACT / RESERVE ===================== -->
+    <section class="contact" id="reserve">
+      <div class="container">
+        <div class="contact__inner">
+
+          <!-- Left — Info -->
+          <div class="contact__info">
+            <h2 class="contact__heading">Join Us Tonight</h2>
+            <p class="contact__body">Walk-ins are always welcome, but if you're coming for weekend brunch or want the patio on a Friday night, a reservation saves you the wait. Call us, email, or use the form below — we'll have a table ready.</p>
+
+            <div class="contact__hours">
+              <div class="hours-row">
+                <span class="hours-day">Monday</span>
+                <span class="hours-time hours-time--closed">Closed</span>
+              </div>
+              <div class="hours-row">
+                <span class="hours-day">Tuesday – Thursday</span>
+                <span class="hours-time">4pm – 10pm</span>
+              </div>
+              <div class="hours-row">
+                <span class="hours-day">Friday</span>
+                <span class="hours-time">12pm – 11pm</span>
+              </div>
+              <div class="hours-row">
+                <span class="hours-day">Saturday</span>
+                <span class="hours-time">10am – 11pm <span class="hours-note">(Brunch 10am–2pm)</span></span>
+              </div>
+              <div class="hours-row">
+                <span class="hours-day">Sunday</span>
+                <span class="hours-time">10am – 9pm <span class="hours-note">(Brunch 10am–2pm)</span></span>
+              </div>
+            </div>
+
+            <div class="contact__details">
+              <p class="contact__detail">
+                <a href="https://maps.google.com/?q=212+Wortley+Road+London+Ontario" target="_blank" rel="noopener noreferrer" class="contact__link">212 Wortley Road, London, ON</a>
+              </p>
+              <p class="contact__detail">
+                <a href="tel:+15196014823" class="contact__link">(519) 601-4823</a>
+              </p>
+              <p class="contact__detail">
+                <a href="mailto:info@thewortleytable.ca" class="contact__link">info@thewortleytable.ca</a>
+              </p>
+            </div>
+          </div>
+
+          <!-- Right — Form -->
+          <div class="contact__form-wrap">
+            <!-- DEMO SITE: Replace form action with your reservation system or Formspree endpoint -->
+            <form class="contact-form" id="reserveForm" action="#" method="POST" novalidate>
+              <div class="form-group">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" id="name" name="name" class="form-input" placeholder="Your full name" required>
+              </div>
+              <div class="form-group">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" id="email" name="email" class="form-input" placeholder="your@email.com" required>
+              </div>
+              <div class="form-group">
+                <label for="phone" class="form-label">Phone</label>
+                <input type="tel" id="phone" name="phone" class="form-input" placeholder="(519) 000-0000">
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="date" class="form-label">Date</label>
+                  <input type="date" id="date" name="date" class="form-input" required>
+                </div>
+                <div class="form-group">
+                  <label for="party" class="form-label">Party Size</label>
+                  <select id="party" name="party" class="form-input form-select" required>
+                    <option value="" disabled selected>Select</option>
+                    <option value="1-2">1–2 guests</option>
+                    <option value="3-4">3–4 guests</option>
+                    <option value="5-6">5–6 guests</option>
+                    <option value="7+">7+ guests</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="message" class="form-label">Special Requests</label>
+                <textarea id="message" name="message" class="form-input form-textarea" placeholder="Dietary needs, occasion, seating preference…" rows="4"></textarea>
+              </div>
+              <button type="submit" class="btn btn--primary btn--full">Request Reservation</button>
+              <p class="form-note">We'll confirm your reservation by phone or email within 24 hours.</p>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer__logo">The Wortley Table</p>
+      <p class="footer__tagline">Good food. Good people. Wortley Village, London ON.</p>
+      <p class="footer__address">212 Wortley Road, London, ON &nbsp;|&nbsp; (519) 601-4823</p>
+      <p class="footer__copy">&copy; 2025 The Wortley Table. All rights reserved.</p>
+      <p class="footer__demo">Demo site by Bryce — not a real business.</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js" defer></script>
+</body>
+</html>

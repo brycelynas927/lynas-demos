@@ -1,0 +1,883 @@
+/* ==========================================================
+   THE WORTLEY TABLE — style.css
+   Neighbourhood gastropub, Wortley Village, London ON
+   Design: Split-screen hero / Terracotta + Cream + Charcoal
+   Fonts: Cormorant Garamond (headings) / DM Sans (body)
+   ========================================================== */
+
+/* ----------------------------------------------------------
+   1. CSS CUSTOM PROPERTIES
+   ---------------------------------------------------------- */
+:root {
+  /* Colours */
+  --charcoal: #2C2416;
+  --terracotta: #C4622D;
+  --terracotta-dark: #a85126;
+  --cream: #F5EFE6;
+  --warm-white: #FDFAF6;
+  --white: #fff;
+  --text-dark: #1A1208;
+  --text-muted: #7A6A58;
+  --shadow: rgba(44, 36, 22, 0.12);
+  --shadow-strong: rgba(44, 36, 22, 0.18);
+  --error: #c0392b;
+  --success: #5a7a4a;
+
+  /* Fonts */
+  --font-heading: 'Cormorant Garamond', serif;
+  --font-body: 'DM Sans', sans-serif;
+
+  /* Spacing */
+  --section-pad: 6rem 0;
+  --container-max: 1200px;
+  --container-pad: 0 2rem;
+}
+
+/* ----------------------------------------------------------
+   2. RESET & BASE
+   ---------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  color: var(--text-dark);
+  background-color: var(--warm-white);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ----------------------------------------------------------
+   3. UTILITY — CONTAINER
+   ---------------------------------------------------------- */
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: var(--container-pad);
+}
+
+/* ----------------------------------------------------------
+   4. UTILITY — BUTTONS
+   ---------------------------------------------------------- */
+.btn {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  padding: 0.9rem 2rem;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn--primary {
+  background-color: var(--terracotta);
+  color: var(--cream);
+}
+
+.btn--primary:hover {
+  background-color: var(--terracotta-dark);
+}
+
+.btn--full {
+  width: 100%;
+  text-align: center;
+}
+
+.btn--confirmed {
+  background-color: var(--success);
+  cursor: default;
+}
+
+/* ----------------------------------------------------------
+   5. UTILITY — SECTION TYPOGRAPHY
+   ---------------------------------------------------------- */
+.section-heading {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 2.8rem;
+  line-height: 1.15;
+  color: var(--text-dark);
+}
+
+.section-heading--center {
+  text-align: center;
+}
+
+.section-heading--light {
+  color: var(--cream);
+}
+
+.section-sub {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-top: 0.75rem;
+  line-height: 1.6;
+}
+
+.section-sub--center {
+  text-align: center;
+}
+
+/* Hero-style small all-caps label — reused in About */
+.hero__label {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  margin-bottom: 1rem;
+}
+
+/* ----------------------------------------------------------
+   6. FADE-IN ANIMATION (IntersectionObserver targets)
+   ---------------------------------------------------------- */
+.fade-in {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ----------------------------------------------------------
+   7. NAV
+   ---------------------------------------------------------- */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--charcoal);
+  transition: box-shadow 0.25s ease;
+}
+
+.nav--scrolled {
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.35);
+}
+
+.nav__inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 2rem;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav__logo {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.4rem;
+  color: var(--cream);
+  letter-spacing: 0.02em;
+  transition: color 0.2s;
+}
+
+.nav__logo:hover {
+  color: var(--terracotta);
+}
+
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav__link {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 0.95rem;
+  color: var(--cream);
+  letter-spacing: 0.03em;
+  transition: color 0.2s;
+}
+
+.nav__link:hover {
+  color: var(--terracotta);
+}
+
+.nav__link--reserve {
+  background-color: var(--terracotta);
+  color: var(--cream);
+  padding: 0.5rem 1.25rem;
+  font-weight: 500;
+}
+
+.nav__link--reserve:hover {
+  background-color: var(--terracotta-dark);
+  color: var(--cream);
+}
+
+/* Hamburger button */
+.nav__hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 26px;
+  height: 18px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.nav__bar {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--cream);
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Hamburger open state */
+.nav__hamburger.open .nav__bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.nav__hamburger.open .nav__bar:nth-child(2) {
+  opacity: 0;
+}
+
+.nav__hamburger.open .nav__bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* ----------------------------------------------------------
+   8. HERO — Split-Screen
+   ---------------------------------------------------------- */
+.hero {
+  display: flex;
+  min-height: 100vh;
+}
+
+.hero__left {
+  width: 50%;
+  background-color: var(--charcoal);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4rem;
+}
+
+.hero__headline {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: clamp(2.8rem, 4vw, 4.5rem);
+  line-height: 1.1;
+  color: var(--cream);
+  margin-top: 0.5rem;
+}
+
+.hero__sub {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 1.05rem;
+  color: rgba(245, 239, 230, 0.8);
+  line-height: 1.7;
+  margin-top: 1.5rem;
+  max-width: 44ch;
+}
+
+.hero__left .btn {
+  margin-top: 2.5rem;
+  align-self: flex-start;
+}
+
+.hero__right {
+  width: 50%;
+  background-image: url('https://images.unsplash.com/photo-k_cc19YD834?auto=format&fit=crop&w=1200&q=80');
+  background-size: cover;
+  background-position: center;
+  min-height: 480px;
+}
+
+/* ----------------------------------------------------------
+   9. MENU SECTION
+   ---------------------------------------------------------- */
+.menu {
+  padding: var(--section-pad);
+  background-color: var(--warm-white);
+}
+
+.menu .section-heading {
+  margin-bottom: 0;
+}
+
+.menu .section-sub {
+  margin-bottom: 3rem;
+}
+
+.menu__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+  margin-top: 1rem;
+}
+
+.menu-card {
+  background-color: var(--white);
+  padding: 2rem;
+  box-shadow: 0 2px 18px var(--shadow);
+  border-left: 3px solid var(--terracotta);
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-card__category {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.menu-card__name {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.4rem;
+  color: var(--text-dark);
+  line-height: 1.2;
+}
+
+.menu-card__desc {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin: 0.75rem 0;
+  flex: 1;
+}
+
+.menu-card__price {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--terracotta);
+  margin-top: auto;
+}
+
+/* ----------------------------------------------------------
+   10. ABOUT SECTION
+   ---------------------------------------------------------- */
+.about {
+  padding: var(--section-pad);
+  background-color: var(--cream);
+}
+
+.about__inner {
+  display: flex;
+  gap: 4rem;
+  align-items: flex-start;
+}
+
+.about__photo-wrap {
+  width: 45%;
+  flex-shrink: 0;
+}
+
+.about__photo {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+  box-shadow: 0 8px 40px var(--shadow-strong);
+}
+
+.about__text {
+  width: 55%;
+  padding-top: 1rem;
+}
+
+.about__name {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 2.4rem;
+  color: var(--text-dark);
+  margin-top: 0.25rem;
+  line-height: 1.1;
+}
+
+.about__title {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-top: 0.4rem;
+  margin-bottom: 1.5rem;
+}
+
+.about__para {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 1rem;
+  color: var(--text-dark);
+  line-height: 1.75;
+  margin-bottom: 1.2rem;
+}
+
+.about__sig {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--terracotta);
+  margin-top: 0.5rem;
+}
+
+/* ----------------------------------------------------------
+   11. TESTIMONIALS SECTION
+   ---------------------------------------------------------- */
+.testimonials {
+  padding: var(--section-pad);
+  background-color: var(--charcoal);
+}
+
+.testimonials .section-heading {
+  margin-bottom: 3rem;
+}
+
+.testimonials__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+}
+
+.testimonial-card {
+  padding: 2rem;
+  border-top: 1px solid rgba(245, 239, 230, 0.2);
+}
+
+.testimonial-card + .testimonial-card {
+  border-left: 1px solid rgba(245, 239, 230, 0.2);
+}
+
+.testimonial-card__quote-mark {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 5rem;
+  line-height: 0.5;
+  color: var(--terracotta);
+  margin-bottom: 1.5rem;
+}
+
+.testimonial-card__text {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--cream);
+  line-height: 1.7;
+}
+
+.testimonial-card__attr {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: var(--terracotta);
+  margin-top: 1.5rem;
+}
+
+/* ----------------------------------------------------------
+   12. CONTACT / RESERVE SECTION
+   ---------------------------------------------------------- */
+.contact {
+  padding: var(--section-pad);
+  background-color: var(--warm-white);
+}
+
+.contact__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: flex-start;
+}
+
+.contact__heading {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 2.4rem;
+  color: var(--text-dark);
+  line-height: 1.15;
+  margin-bottom: 1rem;
+}
+
+.contact__body {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+/* Hours */
+.contact__hours {
+  margin-bottom: 2rem;
+  border-top: 1px solid rgba(122, 106, 88, 0.2);
+}
+
+.hours-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid rgba(122, 106, 88, 0.2);
+  gap: 1rem;
+}
+
+.hours-day {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: var(--text-dark);
+}
+
+.hours-time {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  text-align: right;
+}
+
+.hours-time--closed {
+  color: var(--terracotta);
+  font-weight: 500;
+}
+
+.hours-note {
+  font-size: 0.78rem;
+  opacity: 0.75;
+  display: block;
+  margin-top: 0.1rem;
+}
+
+/* Contact details */
+.contact__details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.contact__detail {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 0.95rem;
+  color: var(--text-dark);
+}
+
+.contact__link {
+  color: var(--terracotta);
+  transition: color 0.2s;
+}
+
+.contact__link:hover {
+  color: var(--terracotta-dark);
+  text-decoration: underline;
+}
+
+/* Form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.form-label {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.85rem;
+  color: var(--text-dark);
+  letter-spacing: 0.03em;
+}
+
+.form-input {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  background-color: var(--white);
+  border: 1px solid rgba(122, 106, 88, 0.3);
+  border-radius: 0;
+  padding: 0.75rem 1rem;
+  width: 100%;
+  transition: border-color 0.2s;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--terracotta);
+}
+
+.form-input::placeholder {
+  color: var(--text-muted);
+  opacity: 0.7;
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+.form-select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%237A6A58' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+}
+
+.form-note {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  text-align: center;
+  margin-top: -0.25rem;
+}
+
+/* Form error highlight */
+.form-input.error {
+  border-color: var(--error);
+}
+
+/* ----------------------------------------------------------
+   13. FOOTER
+   ---------------------------------------------------------- */
+.footer {
+  background-color: var(--charcoal);
+  padding: 3.5rem 0 2.5rem;
+  text-align: center;
+}
+
+.footer__logo {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.4rem;
+  color: var(--cream);
+  letter-spacing: 0.02em;
+  margin-bottom: 0.5rem;
+}
+
+.footer__tagline {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 0.95rem;
+  color: rgba(245, 239, 230, 0.7);
+  margin-bottom: 1rem;
+}
+
+.footer__address {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 0.9rem;
+  color: rgba(245, 239, 230, 0.6);
+  margin-bottom: 1.5rem;
+}
+
+.footer__copy {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 0.8rem;
+  color: rgba(245, 239, 230, 0.45);
+  margin-bottom: 0.4rem;
+}
+
+.footer__demo {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 0.72rem;
+  color: rgba(245, 239, 230, 0.3);
+}
+
+/* ----------------------------------------------------------
+   14. MEDIA QUERIES — TABLET (max-width: 1024px)
+   ---------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .menu__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero__left {
+    padding: 3rem;
+  }
+
+  .about__inner {
+    gap: 2.5rem;
+  }
+
+  .contact__inner {
+    gap: 2.5rem;
+  }
+}
+
+/* ----------------------------------------------------------
+   15. MEDIA QUERIES — MOBILE (max-width: 768px)
+   ---------------------------------------------------------- */
+@media (max-width: 768px) {
+
+  /* Nav — hamburger */
+  .nav__hamburger {
+    display: flex;
+  }
+
+  .nav__links {
+    display: none;
+    position: absolute;
+    top: 68px;
+    left: 0;
+    right: 0;
+    background-color: var(--charcoal);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding-bottom: 1rem;
+    border-top: 1px solid rgba(245, 239, 230, 0.1);
+  }
+
+  .nav__links.open {
+    display: flex;
+  }
+
+  .nav__link {
+    padding: 0.9rem 2rem;
+    font-size: 1rem;
+    border-bottom: 1px solid rgba(245, 239, 230, 0.08);
+  }
+
+  .nav__link--reserve {
+    margin: 1rem 2rem 0;
+    padding: 0.75rem 1.25rem;
+    text-align: center;
+  }
+
+  /* Hero — stack vertically */
+  .hero {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .hero__right {
+    width: 100%;
+    height: 40vh;
+    min-height: 280px;
+    order: -1;
+  }
+
+  .hero__left {
+    width: 100%;
+    padding: 3rem 1.5rem;
+  }
+
+  .hero__headline {
+    font-size: clamp(2.2rem, 8vw, 3rem);
+  }
+
+  .hero__left .btn {
+    align-self: stretch;
+    text-align: center;
+  }
+
+  /* Menu */
+  .menu__grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* About */
+  .about__inner {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .about__photo-wrap {
+    width: 100%;
+  }
+
+  .about__photo {
+    height: 320px;
+  }
+
+  .about__text {
+    width: 100%;
+    padding-top: 0;
+  }
+
+  /* Testimonials */
+  .testimonials__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonial-card + .testimonial-card {
+    border-left: none;
+    border-top: 1px solid rgba(245, 239, 230, 0.2);
+  }
+
+  /* Contact */
+  .contact__inner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  /* Section headings */
+  .section-heading {
+    font-size: 2.2rem;
+  }
+
+  .about__heading,
+  .contact__heading {
+    font-size: 2rem;
+  }
+}

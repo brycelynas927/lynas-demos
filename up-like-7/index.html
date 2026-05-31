@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Up Like 7 Barber Shop | London, ON | Clarke Rd</title>
+  <meta name="description" content="Up Like 7 Barber Shop — East London's sharpest cuts. Fades, trims, and hot towel shaves on Clarke Rd. Walk-ins welcome. Call (519) 204-4247." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- ── DEMO BANNER ── -->
+  <div id="demo-banner" style="position:fixed;top:0;left:0;right:0;z-index:99999;background:#111111;color:#888;text-align:center;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:11px;letter-spacing:0.05em;padding:6px 16px;box-sizing:border-box;border-bottom:1px solid #2a2a2a;">
+    Sample mockup by <strong style="color:#ddd;">Lynas Digital</strong> &mdash; not a real business &nbsp;&middot;&nbsp; <a href="mailto:brudbryc387@gmail.com" style="color:#bbb;text-decoration:none;">Contact Bryce</a>
+  </div>
+
+
+  <!-- ========================================
+       TOPBAR — Phone + Walk-ins notice
+  ======================================== -->
+  <div class="topbar">
+    <div class="topbar-inner">
+      <span class="topbar-item">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+        <a href="tel:+15192044247">(519) 204-4247</a>
+      </span>
+      <span class="topbar-divider">|</span>
+      <span class="topbar-item">Walk-ins Welcome · Open 7 Days</span>
+      <span class="topbar-divider">|</span>
+      <span class="topbar-item">125 Clarke Rd, Unit 3 · London, ON</span>
+    </div>
+  </div>
+
+  <!-- ========================================
+       NAV — Sticky navigation
+  ======================================== -->
+  <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo" aria-label="Up Like 7 home">
+        <span class="logo-line1">Up Like 7</span>
+        <span class="logo-line2">Barber Shop</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-menu" id="navMenu" role="list">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#contact" class="nav-cta">Book Now</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ========================================
+         HERO — Split-screen: left text panel + right photo
+    ======================================== -->
+    <section class="hero" id="hero" aria-label="Hero">
+      <div class="hero-left">
+        <div class="hero-content">
+          <span class="hero-eyebrow">Est. 2008 · Clarke Rd, East London</span>
+          <h1 class="hero-title">Up Like<br />7</h1>
+          <p class="hero-subtitle">Barber Shop</p>
+          <p class="hero-desc">East London's sharpest cuts. 17 years of fades, trims, and hot towel shaves — built on community, skill, and respect.</p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn-primary">Book Your Seat</a>
+            <a href="tel:+15192044247" class="btn-secondary">Call Us</a>
+          </div>
+          <div class="trust-badges">
+            <div class="badge">
+              <span class="badge-num">17+</span>
+              <span class="badge-label">Years Open</span>
+            </div>
+            <div class="badge">
+              <span class="badge-num">4.8★</span>
+              <span class="badge-label">Google Rating</span>
+            </div>
+            <div class="badge">
+              <span class="badge-num">7</span>
+              <span class="badge-label">Days a Week</span>
+            </div>
+            <div class="badge">
+              <span class="badge-num">✓</span>
+              <span class="badge-label">Walk-ins OK</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-right" role="img" aria-label="Barber giving a precise fade haircut">
+        <!-- PLACEHOLDER: Replace with Up Like 7's own photos once they approve the site -->
+      </div>
+    </section>
+
+    <!-- ========================================
+         ACCENT STRIP — Key stat
+    ======================================== -->
+    <div class="accent-strip">
+      <div class="strip-inner">
+        <span>17 Years. 4.8 Stars. East London's Favourite Chair.</span>
+      </div>
+    </div>
+
+    <!-- ========================================
+         SERVICES — 6 service cards
+    ======================================== -->
+    <section class="services" id="services" aria-labelledby="services-heading">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="services-heading">What We Do</h2>
+          <p>Every service done with precision and care. No rush, no shortcuts.</p>
+        </div>
+        <div class="services-grid">
+
+          <article class="service-card">
+            <div class="service-num">01</div>
+            <h3>Men's Haircut</h3>
+            <p>Classic cut styled to your head shape and preference. Finished clean with clippers and scissors.</p>
+            <span class="service-price">From $28</span>
+          </article>
+
+          <article class="service-card">
+            <div class="service-num">02</div>
+            <h3>Fade &amp; Taper</h3>
+            <p>Skin fade, low taper, high-top — Putta's specialty. Crisp lines that last.</p>
+            <span class="service-price">From $32</span>
+          </article>
+
+          <article class="service-card">
+            <div class="service-num">03</div>
+            <h3>Beard Trim &amp; Shape</h3>
+            <p>Clippers and straight razor finish for a clean, defined beard line.</p>
+            <span class="service-price">From $18</span>
+          </article>
+
+          <article class="service-card">
+            <div class="service-num">04</div>
+            <h3>Kids' Cut <span class="service-tag">12 &amp; Under</span></h3>
+            <p>Patient, fun, and kid-friendly. Putta has a gift for making young ones comfortable in the chair.</p>
+            <span class="service-price">From $22</span>
+          </article>
+
+          <article class="service-card">
+            <div class="service-num">05</div>
+            <h3>Head Shave</h3>
+            <p>Smooth, close shave with clippers followed by a hot towel finish. Clean all the way down.</p>
+            <span class="service-price">From $26</span>
+          </article>
+
+          <article class="service-card">
+            <div class="service-num">06</div>
+            <h3>Hot Towel Shave</h3>
+            <p>Old-school straight razor shave with a warm towel prep. The real barbershop experience.</p>
+            <span class="service-price">From $35</span>
+          </article>
+
+        </div>
+        <p class="price-note">* Prices are estimates — call (519) 204-4247 to confirm current rates.</p>
+      </div>
+    </section>
+
+    <!-- ========================================
+         ABOUT — Photo + founder story
+    ======================================== -->
+    <section class="about" id="about" aria-labelledby="about-heading">
+      <div class="container about-grid">
+        <div class="about-photo-wrap">
+          <div class="about-photo" role="img" aria-label="Barber tools and craftsmanship at Up Like 7">
+            <!-- PLACEHOLDER: Replace with real shop photo -->
+          </div>
+          <div class="about-photo-badge">
+            <span>17+</span>
+            <span>Years Cutting</span>
+          </div>
+        </div>
+        <div class="about-text">
+          <h2 id="about-heading">Clarke Road's Chair</h2>
+          <p>Up Like 7 Barber Shop has been part of East London's community for over 17 years. Putta opened the shop on Clarke Rd because he believed the east end deserved a proper barbershop — not a franchise, not a walk-in chain, but a real chair with a real barber who takes time.</p>
+          <p>Every client — whether it's a first-time fade or a standing weekly appointment — gets the same level of attention. That's why people drive from across London just to sit in this chair.</p>
+          <p>Walk-ins are always welcome. But regulars know: book ahead and you're in and out looking sharp.</p>
+          <ul class="about-values">
+            <li>
+              <span class="value-icon">✂</span>
+              <div>
+                <strong>Precision Every Time</strong>
+                <span>Sharp lines, clean fades. Every single cut.</span>
+              </div>
+            </li>
+            <li>
+              <span class="value-icon">👨‍👦</span>
+              <div>
+                <strong>Family-Friendly</strong>
+                <span>Kids are welcome. Putta's patient with all ages.</span>
+              </div>
+            </li>
+            <li>
+              <span class="value-icon">🏘</span>
+              <div>
+                <strong>Built on the Community</strong>
+                <span>East London through and through. 17 years on Clarke Rd.</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================
+         STATS BAR — 4 numbers
+    ======================================== -->
+    <div class="stats-bar">
+      <div class="stats-inner">
+        <div class="stat">
+          <span class="stat-num">17+</span>
+          <span class="stat-label">Years in East London</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">4.8</span>
+          <span class="stat-label">Star Google Rating</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">7</span>
+          <span class="stat-label">Days a Week</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">1</span>
+          <span class="stat-label">Chair. One Standard.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================================
+         TESTIMONIALS — 3 review cards
+    ======================================== -->
+    <section class="testimonials" id="testimonials" aria-labelledby="testimonials-heading">
+      <div class="container">
+        <div class="section-header section-header--light">
+          <h2 id="testimonials-heading">What London Thinks</h2>
+          <p>Real Google reviews from the community.</p>
+        </div>
+        <div class="testimonials-grid">
+
+          <blockquote class="testimonial-card">
+            <div class="stars" aria-label="5 stars">★★★★★</div>
+            <p>"Very professional and sharp cuts every time. I don't go anywhere else."</p>
+            <footer>
+              <span class="reviewer-name">Google Review</span>
+              <span class="reviewer-location">London, ON</span>
+            </footer>
+          </blockquote>
+
+          <blockquote class="testimonial-card">
+            <div class="stars" aria-label="5 stars">★★★★★</div>
+            <p>"Best barber in London. Putta always delivers. Drives from across town and it's worth every km."</p>
+            <footer>
+              <span class="reviewer-name">Google Review</span>
+              <span class="reviewer-location">London, ON</span>
+            </footer>
+          </blockquote>
+
+          <blockquote class="testimonial-card">
+            <div class="stars" aria-label="5 stars">★★★★★</div>
+            <p>"Very nice guys and really good haircuts — I highly recommend. My kid actually looks forward to coming."</p>
+            <footer>
+              <span class="reviewer-name">Google Review</span>
+              <span class="reviewer-location">East London, ON</span>
+            </footer>
+          </blockquote>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================
+         HOW IT WORKS — 3-step process
+    ======================================== -->
+    <section class="process" id="process" aria-labelledby="process-heading">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="process-heading">How It Works</h2>
+          <p>Simple. No fuss. Just show up looking to leave sharp.</p>
+        </div>
+        <div class="process-steps">
+          <div class="step">
+            <div class="step-num">1</div>
+            <h3>Walk In or Call Ahead</h3>
+            <p>Walk-ins are welcome anytime. Or call (519) 204-4247 to check wait times and secure your spot.</p>
+          </div>
+          <div class="step-arrow" aria-hidden="true">→</div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <h3>Tell Putta What You Want</h3>
+            <p>Show a photo, describe it, or trust his eye. He'll give you the cut that suits you best.</p>
+          </div>
+          <div class="step-arrow" aria-hidden="true">→</div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <h3>Walk Out Sharp</h3>
+            <p>Clean lines, perfect fade, fresh look. Same standard every visit.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================
+         SERVICE AREA — London ON coverage
+    ======================================== -->
+    <section class="service-area" aria-labelledby="area-heading">
+      <div class="container">
+        <h2 id="area-heading">Serving East London &amp; Beyond</h2>
+        <p>Based on Clarke Rd in the Argyle neighbourhood, Up Like 7 serves clients from across London and Middlesex County — including East London, Huron Heights, Eastpark, Hamilton Rd, Trafalgar, and surrounding areas.</p>
+        <div class="area-tags">
+          <span>East London</span>
+          <span>Argyle</span>
+          <span>Huron Heights</span>
+          <span>Eastpark</span>
+          <span>Hamilton Rd</span>
+          <span>Trafalgar</span>
+          <span>Middlesex County</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================
+         CONTACT — Form + sidebar info
+    ======================================== -->
+    <section class="contact" id="contact" aria-labelledby="contact-heading">
+      <div class="container contact-grid">
+        <div class="contact-form-wrap">
+          <h2 id="contact-heading">Get in Touch</h2>
+          <p>Questions about services, pricing, or want to book a specific time? Send us a message or just call.</p>
+          <form class="contact-form" id="contactForm" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Your Name <span aria-hidden="true">*</span></label>
+                <input type="text" id="name" name="name" placeholder="First &amp; Last Name" required autocomplete="name" />
+                <span class="field-error" id="name-error" role="alert"></span>
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number <span aria-hidden="true">*</span></label>
+                <input type="tel" id="phone" name="phone" placeholder="(519) 000-0000" required autocomplete="tel" />
+                <span class="field-error" id="phone-error" role="alert"></span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="you@email.com" autocomplete="email" />
+            </div>
+            <div class="form-group">
+              <label for="message">What Do You Need? <span aria-hidden="true">*</span></label>
+              <textarea id="message" name="message" rows="5" placeholder="e.g. Looking to book a fade + beard trim for Saturday..." required></textarea>
+              <span class="field-error" id="message-error" role="alert"></span>
+            </div>
+            <button type="submit" class="btn-primary btn-full">Send Message</button>
+          </form>
+        </div>
+        <aside class="contact-info" aria-label="Contact details">
+          <div class="info-card">
+            <h3>Find Us</h3>
+            <address>
+              Unit 3 – 125 Clarke Rd<br />
+              London, ON N5W 5W1
+            </address>
+          </div>
+          <div class="info-card">
+            <h3>Call or Text</h3>
+            <a href="tel:+15192044247" class="contact-link">(519) 204-4247</a>
+          </div>
+          <div class="info-card">
+            <h3>Hours</h3>
+            <table class="hours-table" aria-label="Business hours">
+              <tbody>
+                <tr><td>Mon – Sat</td><td>10:30 AM – 8:00 PM</td></tr>
+                <tr><td>Sunday</td><td>1:00 PM – 6:00 PM</td></tr>
+              </tbody>
+            </table>
+            <p class="walk-in-note">Walk-ins welcome all hours.</p>
+          </div>
+          <div class="info-card">
+            <h3>Follow the Shop</h3>
+            <div class="social-links">
+              <a href="https://www.instagram.com/uplike7barbershop/" target="_blank" rel="noopener noreferrer" class="social-link">Instagram @uplike7barbershop</a>
+              <a href="https://www.facebook.com/uplike7barbershop/" target="_blank" rel="noopener noreferrer" class="social-link">Facebook</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================
+       FOOTER
+  ======================================== -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="footer-logo">Up Like 7</span>
+        <span class="footer-tagline">Barber Shop · Clarke Rd · London, ON</span>
+      </div>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#testimonials">Reviews</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <p class="footer-copy">&copy; 2025 Up Like 7 Barber Shop. London, Ontario. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js" defer></script>
+</body>
+</html>

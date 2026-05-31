@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Copper &amp; Thyme | Farm-to-Table Dining | Old South, London ON</title>
+  <meta name="description" content="Copper &amp; Thyme is a farm-to-table restaurant in Old South, London Ontario. Seasonal menus, local ingredients, intimate dining. Reservations Tue–Sun." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Restaurant Schema Markup — helps Google show hours, rating & address in search results -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Copper & Thyme",
+    "description": "Farm-to-table restaurant in Old South, London Ontario. Seasonal menus sourced from local Ontario farms.",
+    "url": "https://copperandthyme.ca",
+    "telephone": "+15195550127",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "292 Ridout St N",
+      "addressLocality": "London",
+      "addressRegion": "ON",
+      "postalCode": "N6A 1N2",
+      "addressCountry": "CA"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 42.9934,
+      "longitude": -81.2496
+    },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Wednesday","Thursday"], "opens": "17:00", "closes": "21:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday","Saturday"], "opens": "17:00", "closes": "22:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Sunday"], "opens": "10:00", "closes": "14:00" }
+    ],
+    "servesCuisine": ["Canadian", "Farm-to-Table", "Contemporary"],
+    "priceRange": "$$",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "87"
+    },
+    "hasMap": "https://maps.google.com/?q=292+Ridout+St+N+London+ON"
+  }
+  </script>
+</head>
+<body>
+  <!-- ── DEMO BANNER ── -->
+  <div id="demo-banner" style="position:fixed;top:0;left:0;right:0;z-index:99999;background:#111111;color:#888;text-align:center;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:11px;letter-spacing:0.05em;padding:6px 16px;box-sizing:border-box;border-bottom:1px solid #2a2a2a;">
+    Sample mockup by <strong style="color:#ddd;">Lynas Digital</strong> &mdash; not a real business &nbsp;&middot;&nbsp; <a href="mailto:brudbryc387@gmail.com" style="color:#bbb;text-decoration:none;">Contact Bryce</a>
+  </div>
+
+
+  <!-- ========================================================
+       TOPBAR
+  ======================================================== -->
+  <div class="topbar">
+    <div class="topbar-inner">
+      <span id="openStatus" class="open-status" aria-live="polite"></span>
+      <span class="topbar-divider">|</span>
+      <span>Tues – Sun &nbsp;·&nbsp; Dinner from 5 PM &nbsp;·&nbsp; Sunday Brunch 10 AM – 2 PM</span>
+      <span class="topbar-divider">|</span>
+      <a href="tel:+15195550127">(519) 555-0127</a>
+      <span class="topbar-divider">|</span>
+      <a href="#reservations" class="topbar-reserve">Reserve a Table →</a>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       NAV
+  ======================================================== -->
+  <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo" aria-label="Copper and Thyme home">
+        <span class="logo-name">Copper &amp; Thyme</span>
+        <span class="logo-sub">Old South · London, ON</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-menu" id="navMenu" role="list">
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#about">Our Story</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#reservations" class="nav-cta">Reserve</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ========================================================
+         HERO — Style 5: Light/Editorial (cream background + large serif)
+    ======================================================== -->
+    <section class="hero" id="hero" aria-label="Welcome to Copper and Thyme">
+      <div class="hero-text">
+        <span class="hero-eyebrow">Old South, London Ontario</span>
+        <h1>Where London<br /><em>Eats Well.</em></h1>
+        <p class="hero-desc">Seasonal, farm-to-table dining in the heart of Old South. Everything on the plate comes from within 100 km of this table.</p>
+        <div class="hero-actions">
+          <a href="#reservations" class="btn-primary">Reserve a Table</a>
+          <a href="#menu" class="btn-ghost">View Menu</a>
+        </div>
+      </div>
+      <div class="hero-image-wrap">
+        <div class="hero-photo" role="img" aria-label="Warm candlelit dining room at Copper and Thyme">
+          <!-- Unsplash: warm restaurant interior — placeholder, swap with real dining room photo -->
+        </div>
+        <div class="hero-tag">
+          <span class="tag-line">Farm-to-Table</span>
+          <span class="tag-dot">·</span>
+          <span class="tag-line">Seasonal Menu</span>
+          <span class="tag-dot">·</span>
+          <span class="tag-line">Ontario Sourced</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         FEATURE PHOTO BAND — full-width dining room image
+    ======================================================== -->
+    <div class="photo-band" role="img" aria-label="The Copper and Thyme dining room"></div>
+
+    <!-- ========================================================
+         ACCENT STRIP
+    ======================================================== -->
+    <div class="accent-strip">
+      <div class="strip-inner">
+        <span class="strip-item">Tues – Thurs &nbsp; 5 PM – 9 PM</span>
+        <span class="strip-dot">·</span>
+        <span class="strip-item">Fri – Sat &nbsp; 5 PM – 10 PM</span>
+        <span class="strip-dot">·</span>
+        <span class="strip-item">Sunday Brunch &nbsp; 10 AM – 2 PM</span>
+        <span class="strip-dot">·</span>
+        <span class="strip-item">Closed Monday</span>
+      </div>
+    </div>
+
+    <!-- ========================================================
+         MENU HIGHLIGHTS — 3 categories
+    ======================================================== -->
+    <section class="menu" id="menu" aria-labelledby="menu-heading">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">Seasonal Menu</span>
+          <h2 id="menu-heading">On the Table This Season</h2>
+          <p>Our menu changes with what Ontario farms are producing. These are a few current highlights.</p>
+        </div>
+
+        <div class="menu-grid">
+
+          <div class="menu-category reveal">
+            <h3 class="category-name">To Start</h3>
+            <ul class="dish-list">
+              <li class="dish">
+                <div class="dish-info">
+                  <span class="dish-name">Roasted Beet &amp; Chèvre</span>
+                  <span class="dish-desc">Honey-roasted Pfenning Farms beets, local goat cheese, candied walnuts, arugula</span>
+                </div>
+                <span class="dish-price">$16</span>
+              </li>
+              <li class="dish">
+                <div class="dish-info">
+                  <span class="dish-name">Soup of the Day</span>
+                  <span class="dish-desc">Ask your server — made fresh each morning from seasonal produce</span>
+                </div>
+                <span class="dish-price">$12</span>
+              </li>
+              <li class="dish">
+                <div class="dish-info">
+                  <span class="dish-name">Charcuterie Board</span>
+                  <span class="dish-desc">Ontario-cured meats, local pickles, aged cheddar, house-made preserves, fresh bread</span>
+                </div>
+                <span class="dish-price">$24</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="menu-category reveal">
+            <h3 class="category-name">Mains</h3>
+            <ul class="dish-list">
+              <li class="dish">
+                <div class="dish-info">
+                  <span class="dish-name">Pan-Seared Lake Perch</span>
+                  <span class="dish-desc">Lake Erie perch, saffron cream, roasted leeks, fingerling potatoes, dill oil</span>
+                </div>
+                <span class="dish-price">$38</span>
+              </li>
+              <li class="dish">
+                <div class="dish-info">
+                  <span class="dish-name">Strathroy Pork Belly</span>
+                  <span class="dish-desc">Slow-roasted heritage pork, apple cider jus, celeriac purée, crispy sage</span>
+                </div>
+                <span class="dish-price">$42</span>
+              </li>
+              <li class="dish">
+                <div class="dish-info">
+                  <span class="dish-name">Wild Mushroom Risotto <span class="dish-tag">V</span></span>
+                  <span class="dish-desc">Foraged mushrooms, Parmesan, truffle oil, fresh herbs from our window garden</span>
+                </div>
+                <span class="dish-price">$32</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="menu-category reveal">
+            <h3 class="category-name">Sunday Brunch</h3>
+            <ul class="dish-list">
+              <li class="dish">
+                <div class="dish-info">
+                  <span class="dish-name">The Ridout Benedict</span>
+                  <span class="dish-desc">Local eggs, house-cured ham, brown butter hollandaise, brioche from Covent Market</span>
+                </div>
+                <span class="dish-price">$22</span>
+              </li>
+              <li class="dish">
+                <div class="dish-info">
+                  <span class="dish-name">Buckwheat Pancakes <span class="dish-tag">V</span></span>
+                  <span class="dish-desc">Stone-milled buckwheat, Ontario maple syrup, compote of the week, crème fraîche</span>
+                </div>
+                <span class="dish-price">$18</span>
+              </li>
+              <li class="dish">
+                <div class="dish-info">
+                  <span class="dish-name">Smoked Salmon Hash</span>
+                  <span class="dish-desc">Wild-caught smoked salmon, potato hash, pickled red onion, capers, two eggs any style</span>
+                </div>
+                <span class="dish-price">$26</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+        <p class="menu-note">Full menu available in restaurant. Menu changes seasonally — follow us on Instagram for weekly updates. <span class="dish-tag">V</span> = vegetarian.</p>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         ABOUT — Story + photo + values
+    ======================================================== -->
+    <section class="about" id="about" aria-labelledby="about-heading">
+      <div class="container about-grid">
+        <div class="about-image-col reveal">
+          <div class="about-photo" role="img" aria-label="Chef Emma at Copper and Thyme"></div>
+          <div class="about-caption">
+            <strong>Emma</strong>
+            <span>Owner &amp; Head Chef</span>
+          </div>
+        </div>
+        <div class="about-text reveal">
+          <span class="section-label">Our Story</span>
+          <h2 id="about-heading">A Restaurant Built on One Idea.</h2>
+          <p>Copper &amp; Thyme started with a simple belief: the best meal you can eat in London, Ontario is one made from what's actually growing in Ontario right now. Not imported, not frozen — just what the farms around us have this week.</p>
+          <p>Emma opened the doors in Old South in 2019 with eleven tables, a wood-fired oven, and relationships with five local farms. Today those relationships have grown to eighteen producers across Middlesex County — and the menu still changes every time something better comes off the land.</p>
+          <p>Every dish traces back to a specific farm, a specific field, a specific harvest. We put that on the menu so you know exactly where your dinner came from.</p>
+          <ul class="values">
+            <li>
+              <span class="value-icon">🌿</span>
+              <div>
+                <strong>100 km Sourcing</strong>
+                <span>Every ingredient sourced from within Middlesex County and surrounding region</span>
+              </div>
+            </li>
+            <li>
+              <span class="value-icon">🗓</span>
+              <div>
+                <strong>Seasonal Menu</strong>
+                <span>The menu changes when the farms do — never the same twice</span>
+              </div>
+            </li>
+            <li>
+              <span class="value-icon">🤝</span>
+              <div>
+                <strong>18 Local Partners</strong>
+                <span>Pfenning Farms, Slegers Organic, Covent Garden Market, and fifteen more</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         STATS BAR
+    ======================================================== -->
+    <div class="stats-bar">
+      <div class="stats-inner reveal-stagger">
+        <div class="stat">
+          <span class="stat-num">6</span>
+          <span class="stat-label">Years Open in Old South</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">18</span>
+          <span class="stat-label">Local Farm Partners</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">4.9</span>
+          <span class="stat-label">Stars on Google</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">11</span>
+          <span class="stat-label">Tables. Always Intimate.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================================================
+         GALLERY — atmosphere & food photography grid
+    ======================================================== -->
+    <section class="gallery" aria-label="Photos of Copper and Thyme">
+      <div class="gallery-grid reveal-stagger">
+        <div class="gallery-photo gallery-photo--tall" role="img" aria-label="Dining room at Copper and Thyme" style="background-image:url('https://images.unsplash.com/photo-1537047902294-62a40c20a6ae?auto=format&fit=crop&w=800&q=80')"></div>
+        <div class="gallery-photo" role="img" aria-label="Seasonal dish at Copper and Thyme" style="background-image:url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80')"></div>
+        <div class="gallery-photo" role="img" aria-label="Farm fresh produce" style="background-image:url('https://images.unsplash.com/photo-1498579150354-977475b7ea0b?auto=format&fit=crop&w=800&q=80')"></div>
+        <div class="gallery-photo gallery-photo--wide" role="img" aria-label="Wine and candlelit table" style="background-image:url('https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1200&q=80')"></div>
+        <div class="gallery-photo" role="img" aria-label="House-made bread and butter" style="background-image:url('https://images.unsplash.com/photo-1606787366850-de6330128bfc?auto=format&fit=crop&w=800&q=80')"></div>
+      </div>
+      <div class="gallery-cta">
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="btn-ghost">Follow on Instagram →</a>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         TESTIMONIALS
+    ======================================================== -->
+    <section class="testimonials" id="testimonials" aria-labelledby="reviews-heading">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">Reviews</span>
+          <h2 id="reviews-heading">What London Is Saying</h2>
+        </div>
+        <div class="reviews-grid reveal-stagger">
+
+          <blockquote class="review-card">
+            <div class="stars" aria-label="5 stars">★★★★★</div>
+            <p>"Genuinely the best meal I've had in London. Everything tasted like it was made that day — because it was. The pork belly was unforgettable."</p>
+            <footer>
+              <span class="reviewer">Sarah M.</span>
+              <span class="reviewer-loc">Wortley Village</span>
+            </footer>
+          </blockquote>
+
+          <blockquote class="review-card">
+            <div class="stars" aria-label="5 stars">★★★★★</div>
+            <p>"We go every few months just to see what's changed on the menu. It's never the same, always exceptional. Sunday brunch is a must."</p>
+            <footer>
+              <span class="reviewer">Daniel &amp; Claire</span>
+              <span class="reviewer-loc">Byron</span>
+            </footer>
+          </blockquote>
+
+          <blockquote class="review-card">
+            <div class="stars" aria-label="5 stars">★★★★★</div>
+            <p>"Emma is the real deal. You can taste the care in every dish. I love that she puts the farm name on the menu — my kids actually ask where their food comes from now."</p>
+            <footer>
+              <span class="reviewer">Rachel T.</span>
+              <span class="reviewer-loc">Old South</span>
+            </footer>
+          </blockquote>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         RESERVATIONS
+    ======================================================== -->
+    <section class="reservations" id="reservations" aria-labelledby="reserve-heading">
+      <div class="container reserve-grid">
+        <div class="reserve-text">
+          <span class="section-label">Reservations</span>
+          <h2 id="reserve-heading">Book Your Table</h2>
+          <p>We hold tables for up to 3 hours. Walk-ins welcome when space is available — but Friday and Saturday evenings book out fast.</p>
+          <p>For parties of 6 or more, please call us directly at <a href="tel:+15195550127">(519) 555-0127</a>.</p>
+
+          <div class="hours-block">
+            <h3>Hours</h3>
+            <table class="hours-table" aria-label="Restaurant hours">
+              <tbody>
+                <tr><td>Tuesday – Thursday</td><td>5:00 PM – 9:00 PM</td></tr>
+                <tr><td>Friday – Saturday</td><td>5:00 PM – 10:00 PM</td></tr>
+                <tr><td>Sunday Brunch</td><td>10:00 AM – 2:00 PM</td></tr>
+                <tr class="closed-row"><td>Monday</td><td>Closed</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="location-block">
+            <h3>Find Us</h3>
+            <address>
+              292 Ridout St N<br />
+              London, ON N6A 1N2<br />
+              Old South
+            </address>
+            <p class="parking-note">Street parking on Ridout St. Lot available on Wortley Rd — 2 min walk.</p>
+          </div>
+        </div>
+
+        <div class="reserve-form-wrap">
+          <form class="reserve-form" id="reserveForm" novalidate>
+            <div class="form-group">
+              <label for="res-name">Name <span aria-hidden="true">*</span></label>
+              <input type="text" id="res-name" name="name" placeholder="Your full name" required autocomplete="name" />
+              <span class="field-error" id="res-name-error" role="alert"></span>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="res-phone">Phone <span aria-hidden="true">*</span></label>
+                <input type="tel" id="res-phone" name="phone" placeholder="(519) 000-0000" required autocomplete="tel" />
+                <span class="field-error" id="res-phone-error" role="alert"></span>
+              </div>
+              <div class="form-group">
+                <label for="res-guests">Guests <span aria-hidden="true">*</span></label>
+                <select id="res-guests" name="guests" required>
+                  <option value="">How many?</option>
+                  <option value="1">1 person</option>
+                  <option value="2">2 people</option>
+                  <option value="3">3 people</option>
+                  <option value="4">4 people</option>
+                  <option value="5">5 people</option>
+                  <option value="6+">6+ (please call)</option>
+                </select>
+                <span class="field-error" id="res-guests-error" role="alert"></span>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="res-date">Preferred Date <span aria-hidden="true">*</span></label>
+                <input type="date" id="res-date" name="date" required />
+                <span class="field-error" id="res-date-error" role="alert"></span>
+              </div>
+              <div class="form-group">
+                <label for="res-time">Preferred Time</label>
+                <select id="res-time" name="time">
+                  <option value="">Any time</option>
+                  <option value="5:00 PM">5:00 PM</option>
+                  <option value="5:30 PM">5:30 PM</option>
+                  <option value="6:00 PM">6:00 PM</option>
+                  <option value="6:30 PM">6:30 PM</option>
+                  <option value="7:00 PM">7:00 PM</option>
+                  <option value="7:30 PM">7:30 PM</option>
+                  <option value="8:00 PM">8:00 PM</option>
+                  <option value="8:30 PM">8:30 PM</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="res-notes">Dietary needs or special requests</label>
+              <textarea id="res-notes" name="notes" rows="3" placeholder="Allergies, anniversary, high chair needed, etc."></textarea>
+            </div>
+            <button type="submit" class="btn-primary btn-full">Request Reservation</button>
+            <p class="form-note">We'll confirm by phone within 2 hours during business hours. <!-- OWNER: connect this form to your email via Formspree or similar --></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         PRIVATE DINING — bonus section for restaurants
+    ======================================================== -->
+    <section class="private-dining" aria-labelledby="private-heading">
+      <div class="container">
+        <div class="private-grid">
+          <div class="private-photo reveal" role="img" aria-label="Private dining room setup at Copper and Thyme"></div>
+          <div class="private-text reveal">
+            <span class="section-label">Private Events</span>
+            <h2 id="private-heading">The Whole Table. Just for You.</h2>
+            <p>Copper &amp; Thyme is available for private buyouts on Monday evenings and select Sunday afternoons. Perfect for corporate dinners, milestone celebrations, and intimate weddings of up to 44 guests.</p>
+            <p>Emma works with you personally to build a custom seasonal menu for your event. All produce sourced to match the season of your date.</p>
+            <a href="tel:+15195550127" class="btn-outline">Call to Enquire</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================
+       FOOTER
+  ======================================================== -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="footer-name">Copper &amp; Thyme</span>
+        <span class="footer-loc">292 Ridout St N · Old South · London, ON</span>
+        <a href="tel:+15195550127" class="footer-phone">(519) 555-0127</a>
+      </div>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="#menu">Menu</a>
+        <a href="#about">Our Story</a>
+        <a href="#testimonials">Reviews</a>
+        <a href="#reservations">Reservations</a>
+      </nav>
+      <div class="footer-social">
+        <a href="#" class="social-link" aria-label="Instagram">Instagram</a>
+        <a href="#" class="social-link" aria-label="Facebook">Facebook</a>
+      </div>
+      <p class="footer-copy">&copy; 2025 Copper &amp; Thyme. London, Ontario. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Floating Reserve CTA — appears after scrolling past hero -->
+  <div class="float-cta" id="floatCta" aria-hidden="true">
+    <a href="#reservations" class="float-cta-btn">
+      <span class="float-cta-icon">🍽</span>
+      Reserve a Table
+    </a>
+  </div>
+
+  <script src="js/script.js" defer></script>
+</body>
+</html>
