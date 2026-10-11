@@ -24,6 +24,86 @@ function savedWords(){
 window.refreshPositive=function(kind){if(!['photo','quote','affirm'].includes(kind))return;record()[kind]++;save();drawPage()};
 window.savePositive=function(){let x=pickAffirm();state.savedAffirmations=state.savedAffirmations||[];let pos=state.savedAffirmations.indexOf(x);if(pos===-1)state.savedAffirmations.push(x);else state.savedAffirmations.splice(pos,1);save();drawPage();toast(pos===-1?'Affirmation saved ♡':'Removed from saved affirmations')};
 window.sayPositive=function(){if(!('speechSynthesis' in window)){toast('Read aloud is not supported on this browser');return}speechSynthesis.cancel();let u=new SpeechSynthesisUtterance(pickAffirm());u.lang='en-US';u.rate=.85;speechSynthesis.speak(u)};
+
+function photoFor(category,used,shift=0){
+ const target=(category||'').toLowerCase();
+ let best=photos.filter(p=>p.tag.toLowerCase()===target&&!used.has(p.url));
+ if(!best.length)best=photos.filter(p=>!used.has(p.url));
+ if(!best.length)best=photos;
+ let n=Math.abs(dayNumber()+record().photo*7+shift*3)%best.length,p=best[n];
+ used.add(p.url);return p;
+}
+function cardCategory(page,content,index){
+ let t=(content||'').toLowerCase();
+ if(/spanish|español|vocab|lesson|phrase|pronunciation|flashcard/.test(t))return 'Spanish & travel';
+ if(/income|business|freedom|remote|roadmap|money|client/.test(t))return 'Remote work';
+ if(/habit|mood|wellness|stress|journal|check-in|reflect|affirm|peace|quote/.test(t))return 'Self care';
+ if(/couple|relationship|together/.test(t))return 'Together';
+ if(/home|house/.test(t))return 'Dream home';
+ if(/destination|travel|vision|dream/.test(t))return 'Travel';
+ if(/learn|skill|course|study|trial|challenge/.test(t))return 'Learning';
+ let fallbacks={home:['Adventure','Learning','Self care','Remote work','Together'],vision:['Travel','Dream home','Together','Adventure'],learn:['Learning','Remote work','Adventure'],spanish:['Spanish & travel','Travel','Learning'],freedom:['Remote work','Adventure','Dream home'],growth:['Self care','Learning','Together']};
+ let list=fallbacks[page]||fallbacks.home;
+ return list[index%list.length];
+}
+function addBanner(el,photo,compact=false){
+ if(!photo||el.querySelector(':scope > .mnc-photo-banner'))return;
+ const banner=document.createElement('div');
+ banner.className='mnc-photo-banner'+(compact?' compact':'');
+ const img=document.createElement('img');
+ img.loading='lazy';img.decoding='async';img.alt='';img.src=photo.url;
+ img.onerror=()=>{img.style.display='none';banner.classList.add('no-image')};
+ banner.appendChild(img);el.insertBefore(banner,el.firstChild);
+ el.classList.add('mnc-has-photo');
+}
+function enrichPagePhotos(parent){
+ if(!parent)return;
+ const used=new Set();
+ const start=dayNumber()%6;
+ const galleryPhotos=[...parent.querySelectorAll('.positive-photo img')];
+ galleryPhotos.forEach(img=>used.add(img.src));
+ const hero=parent.querySelector('.hero');
+ if(hero){let category=currentPage==='freedom'?'Remote work':'Travel',p=photoFor(category,used,start);
+ hero.style.backgroundImage='linear-gradient(90deg,rgba(14,35,31,.87) 0%,rgba(14,35,31,.62) 55%,rgba(14,35,31,.12) 100%),url("'+p.url+'")';
+ hero.classList.add('mnc-hero-photo');
+ }
+ const cards=[...parent.querySelectorAll('.card')];
+ cards.forEach((card,i)=>{
+  const key=(card.querySelector('h2,h3,.eyebrow')?.textContent||card.textContent||'').slice(0,135);
+  const preferred=cardCategory(currentPage,key,i+start);
+  addBanner(card,photoFor(preferred,used,i+start),card.classList.contains('metric'));
+ });
+ if(currentPage==='vision'){
+  [...parent.querySelectorAll('.vision-card')].forEach((card,i)=>{
+   if(card.classList.contains('photo'))return;
+   const g=state.goals[i],k=cardCategory('vision',(g?.category||'')+' '+(g?.title||''),i);
+   const p=photoFor(k,used,i+40);
+   card.classList.add('photo','mnc-vision-photo');
+   card.style.backgroundImage='linear-gradient(180deg,rgba(8,28,26,.16),rgba(8,28,26,.78)),url("'+p.url+'")';
+  })
+ }
+ if(currentPage==='learn'){
+  [...parent.querySelectorAll('.course-card')].forEach((c,i)=>{
+   if(c.querySelector('.mnc-course-thumb'))return;
+   const photo=photoFor(i%3===1?'Remote work':'Learning',used,i+85);
+   const picture=document.createElement('div');picture.className='mnc-course-thumb';
+   const img=document.createElement('img');img.loading='lazy';img.alt='';img.src=photo.url;
+   img.onerror=()=>picture.classList.add('no-image');
+   picture.appendChild(img);c.insertBefore(picture,c.firstChild);
+  })
+ }
+ if(currentPage==='spanish'){
+  const flash=parent.querySelector('.flashcard');
+  if(flash&&!parent.querySelector('.mnc-spanish-scene')){
+   const p=photoFor('Spanish & travel',used,103);
+   const div=document.createElement('div');div.className='mnc-spanish-scene';
+   div.innerHTML='<img alt="Spanish travel inspiration" loading="lazy" src="'+p.url+'"><span>✦ Dreaming of speaking Spanish abroad</span>';
+   div.querySelector('img').onerror=()=>div.classList.add('no-image');
+   flash.insertAdjacentElement('beforebegin',div);
+  }
+ }
+}
+
 function decorate(){let parent=document.getElementById('page-'+currentPage);if(!parent)return;
  if(currentPage==='home'){
   let h=parent.querySelector('.hero');if(h)h.insertAdjacentHTML('afterend',gallery());
@@ -31,6 +111,7 @@ function decorate(){let parent=document.getElementById('page-'+currentPage);if(!
  }else if(currentPage==='vision'){
   let intro=parent.querySelector('.intro');if(intro)intro.insertAdjacentHTML('afterend',gallery());
  }else if(currentPage==='growth'){parent.insertAdjacentHTML('beforeend',savedWords())}
+ enrichPagePhotos(parent);
 }
 const originalDrawPage=drawPage;
 window.drawPage=function(){originalDrawPage();decorate()};
