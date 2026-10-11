@@ -3,13 +3,13 @@
 const lessons=window.MNC_BUSINESS_LESSONS||[];
 const tracks=window.MNC_BUSINESS_TRACKS||[];
 function profile(){
- if(!state.businessLearning||typeof state.businessLearning!=='object')state.businessLearning={track:'explore',minutes:20,done:[],notes:{},quizzes:{},selected:'',showAll:false};
+ if(!state.businessLearning||typeof state.businessLearning!=='object')state.businessLearning={track:'explore',minutes:15,done:[],notes:{},quizzes:{},selected:'',showAll:false};
  let p=state.businessLearning;
  if(!Array.isArray(p.done))p.done=[];
  if(!p.notes||typeof p.notes!=='object')p.notes={};
  if(!p.quizzes||typeof p.quizzes!=='object')p.quizzes={};
  if(!tracks.some(t=>t.id===p.track))p.track='explore';
- if(![15,30,60].includes(Number(p.minutes)))p.minutes=20;
+ if(![15,30,60].includes(Number(p.minutes)))p.minutes=15;
  return p;
 }
 function courseOrder(){let p=profile(),track=tracks.find(t=>t.id===p.track)||tracks[0];return track.order.map(id=>lessons.find(x=>x.id===id)).filter(Boolean)}
