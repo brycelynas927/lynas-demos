@@ -3,6 +3,7 @@
 const learningLinks=[
  {name:'Startup School',what:'Find customers & test business ideas',url:'https://www.startupschool.org/',icon:'🚀',key:'startup'},
  {name:'HubSpot Academy',what:'Free digital marketing course',url:'https://academy.hubspot.com/courses/digital-marketing',icon:'📣',key:'marketing'},
+ {name:'Microsoft Learn',what:'Free AI fundamentals & practical lessons',url:'https://learn.microsoft.com/en-us/training/paths/ai-fluency/',icon:'🤖',key:'ai'},
  {name:'freeCodeCamp',what:'Build websites & learn coding',url:'https://www.freecodecamp.org/learn',icon:'💻',key:'code'},
  {name:'Language Transfer',what:'Free spoken Spanish audio lessons',url:'https://www.languagetransfer.org/complete-spanish',icon:'🎧',key:'spanish'},
  {name:'SpanishDict',what:'Spanish listening, grammar & pronunciation',url:'https://www.spanishdict.com/guide/how-to-learn-spanish-online-for-free',icon:'🇪🇸',key:'spanishdict'}
@@ -27,7 +28,8 @@ function learningNext(){
 function resourceForLesson(lesson){
  const id=lesson?.id;
  if(['marketing','sales'].includes(id))return byKey.marketing;
- if(['portfolio','automation'].includes(id))return byKey.code;
+ if(['portfolio'].includes(id))return byKey.code;
+ if(['automation'].includes(id))return byKey.ai;
  return byKey.startup;
 }
 function tasksForToday(){
