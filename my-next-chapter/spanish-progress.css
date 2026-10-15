@@ -1,0 +1,36 @@
+
+/* Spanish word mastery & gentle spaced review */
+.sv-progress,.sv-review{background:#fffefa;border:1px solid #dfe9de;border-radius:17px;padding:17px 19px;margin:15px 0;box-shadow:0 4px 22px rgba(34,65,43,.055)}
+.sv-progress-top,.sv-review-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.sv-progress-top strong{font-size:14px;color:#284c35}
+.sv-progress-top span{font-size:12px;color:#3b7657;font-weight:800}
+.sv-track{height:8px;border-radius:9px;background:#e8ede3;overflow:hidden;margin:12px 0 8px}
+.sv-track span{height:100%;display:block;background:#70a482;border-radius:8px}
+.sv-progress>small{font-size:11px;color:#738274}
+.sv-review{background:linear-gradient(118deg,#f0f7eb,#fdf6eb)}
+.sv-review-heading h3{font:600 21px/1.2 'Playfair Display',Georgia,serif;margin:6px 0}
+.sv-review-heading p{font-size:12px;color:#647667;max-width:475px;line-height:1.45}
+.sv-due{border-radius:99px;background:#dfece0;padding:7px 10px;color:#315a41;font-size:11px;font-weight:800}
+.sv-review-card{background:white;padding:15px;border:1px solid #e7eae3;border-radius:13px;margin-top:15px;display:flex;flex-direction:column;align-items:flex-start;gap:11px}
+.sv-review-card>strong{font:600 24px 'Playfair Display',Georgia,serif}
+.sv-hear,.sv-review-reveal,.sv-review-yes,.sv-review-no{border:1px solid #dbe5d9;border-radius:11px;background:#f0f5ee;color:#285940;padding:10px 13px;font-size:12px;font-weight:800;cursor:pointer}
+.sv-review-yes{background:#28573e;color:white;border-color:#28573e}
+.sv-review-no{background:white}
+.sv-review-actions{display:flex;gap:8px;flex-wrap:wrap}
+.sv-review-reveal{width:100%}
+.sv-answer{font-size:14px;margin:0;color:#4d6e5b}
+.sv-all-clear{background:#ecf5ec;color:#376149;padding:13px;border-radius:12px;font-size:13px;line-height:1.5;margin-top:12px}
+.sv-mark-current{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;background:#edf5e9;border:1px solid #d4e9d2;border-radius:13px;padding:11px 12px;margin:8px 0 13px;color:#42614b;font-size:12px}
+.sv-mark-current button,.sv-learn,.sv-unlearn{border:1px solid #79a487;border-radius:10px;background:#315e41;color:white;padding:9px 11px;font-size:12px;font-weight:800;cursor:pointer}
+.sv-learn{background:#edf7eb;color:#2e6343;white-space:nowrap}
+.sv-unlearn{background:white;color:#607765;border-color:#d6e0d4;white-space:nowrap}
+.sv-vocabulary-row{flex-wrap:wrap}
+.sv-vocabulary-row .btn{min-width:68px!important}
+.sv-mastered{margin:12px 0;border:1px solid #dfe7da;border-radius:12px;background:#f4f8f2;overflow:hidden}
+.sv-mastered summary{cursor:pointer;font-size:13px;font-weight:800;color:#356143;padding:14px}
+.sv-mastered .spanish-word-row{border-radius:0;border-left:0;border-right:0;border-bottom:0;background:white}
+.sv-cleared{padding:18px;border-radius:14px;background:#f2f7eb;margin:13px 0;color:#32553d}
+.sv-cleared strong{font-size:17px}
+.sv-cleared p{font-size:13px;margin:8px 0 14px;color:#627361;line-height:1.5}
+.sv-hear:focus-visible,.sv-review-reveal:focus-visible,.sv-review-yes:focus-visible,.sv-review-no:focus-visible,.sv-mark-current button:focus-visible,.sv-learn:focus-visible,.sv-unlearn:focus-visible{outline:3px solid #609b75;outline-offset:2px}
+@media(max-width:600px){.sv-progress,.sv-review{padding:14px}.sv-review-card>strong{font-size:21px}.sv-vocabulary-row{padding:9px!important;gap:6px}.sv-vocabulary-row .btn,.sv-learn,.sv-unlearn{padding:8px;font-size:11px}.sv-review-heading h3{font-size:20px}}
